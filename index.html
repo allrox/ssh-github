@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 
-	<title>Estabelecendo conexões via SSH com o GitHub</title>
+	<title>Estabelecendo conex&otilde;es via SSH com o GitHub</title>
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 
 </head>
@@ -10,7 +10,7 @@
 
 		<header class="headercontainer">
 			<div >
-				<h1>Estabelecendo conexões SSH com o GitHub</h1>
+				<h1>Estabelecendo conex&otilde;es SSH com o GitHub</h1>
 			</div>
 		</header>
 
@@ -18,33 +18,33 @@
 
 			<h2>Etapas do processo</h2>
 
-			<p>Para realizar a conexão utilizando SSH, crie localmente um par de chaves (chave-pública e chave-privada), e configure no GitHub a chave privada. Assim a máquina local será reconhecida e aceita como confiável.</p>
+			<p>Para realizar a conex&atilde;o utilizando SSH, crie localmente um par de chaves (chave-p&uacute;blica e chave-privada), e configure no GitHub a chave privada. Assim a m&aacute;quina local ser&aacute; reconhecida e aceita como confi&aacute;vel.</p>
 
-			<p>O local para inserção da chave pública no GitHub está localizado em <strong class="emphasis">"SSH and GPG Keys"</strong>, na URL <strong class="emphasis">github.com/settings/keys</strong>.</p>
+			<p>O local para inser&ccedil;&atilde;o da chave p&uacute;blica no GitHub est&aacute; localizado em <strong class="emphasis">"SSH and GPG Keys"</strong>, na URL <strong class="emphasis">github.com/settings/keys</strong>.</p>
 
-			<p>Para gerar a chave, através do terminal utilize a linha de comando:</p>
+			<p>Para gerar a chave, atrav&eacute;s do terminal utilize a linha de comando:</p>
 			<p><span class="code">$ ssh-keygen -t ed25519 -C "seuemail"</span></p>
 
-			<p>Após o retorno do comando, confirme a localização e informe uma senha para a sua chave. Um par de chaves será gerado em <strong class="emphasis">"/home/Usuario/.ssh/id_25519"</strong>.</p>
+			<p>Ap&oacute;s o retorno do comando, confirme a localiza&ccedil;&atilde;o e informe uma senha para a sua chave. Um par de chaves ser&aacute; gerado em <strong class="emphasis">"/home/Usuario/.ssh/id_25519"</strong>.</p>
 
-			<p>Navegue até a localização da chave para resgatar a chave pública com a linha de comando:</p><p><span class="code">$ cat id_ed25519.pub</span></p>
+			<p>Navegue at&eacute; a localiza&ccedil;&atilde;o da chave para resgatar a chave p&uacute;blica com a linha de comando:</p><p><span class="code">$ cat id_ed25519.pub</span></p>
 
-			<p>Copie a chave exibida e informe-a ao GitHub, na seção descrita no início do processo.</p>
+			<p>Copie a chave exibida e informe-a ao GitHub, na se&ccedil;&atilde;o descrita no in&iacute;cio do processo.</p>
 
-			<p><span class="alert">(!) Agora o GitHub já possui a chave pública do computador local, mas é necessário inicializar as chaves (localmente) com o SSH Agent. Para realizar a inicialização é preciso seguir as etapas:</span> </p>
+			<p><span class="alert">(!) Agora o GitHub j&aacute; possui a chave p&uacute;blica do computador local, mas &eacute; necess&aacute;rio inicializar as chaves (localmente) com o SSH Agent. Para realizar a inicializa&ccedil;&atilde;o &eacute; preciso seguir as etapas:</span> </p>
 
 			<p><span class="code">$ eval $(ssh-agent -s)</span></p>
 
-			<p>Será exibido um retorno como: <span class="code">"Agent pid 1111"</span>.</p>
+			<p>Ser&aacute; exibido um retorno como: <span class="code">"Agent pid 1111"</span>.</p>
 
-			<p>Agora será necessário entregar a chave privada ao SSH Agent, com o comando:</p>
+			<p>Agora ser&aacute; necess&aacute;rio entregar a chave privada ao SSH Agent, com o comando:</p>
 			<p><span class="code">$ ssh-add id_ed25519, informando a senha para prosseguir.</span></p>
 			<br>
 
 			<h3>Linhas gerais</h3>
 				<ul>
-					<li>Geração do par de chaves</li>
-					<li>Informar a chave pública ao GitHub</li>
+					<li>Gera&ccedil;&atilde;o do par de chaves</li>
+					<li>Informar a chave p&uacute;blica ao GitHub</li>
 					<li>Inicializar a chave localmente com o SSH Agent</li>
 					<li>Informar a chave privada ao SSH Agent.</li>
 				</ul>
